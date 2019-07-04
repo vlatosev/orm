@@ -2632,7 +2632,6 @@ class UnitOfWork implements PropertyChangedListener
                     if (isset($data[$field]) && is_object($data[$field]) && isset($this->entityStates[spl_object_hash($data[$field])])) {
                         $class->reflFields[$field]->setValue($entity, $data[$field]);
                         $this->originalEntityData[$oid][$field] = $data[$field];
-
                         break;
                     }
 
