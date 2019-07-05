@@ -2628,7 +2628,7 @@ class UnitOfWork implements PropertyChangedListener
                         continue 2;
                     }
 
-                    // use the entity association
+                    // use the entity association (fix break/continue)
                     if (isset($data[$field]) && is_object($data[$field]) && isset($this->entityStates[spl_object_hash($data[$field])])) {
                         $class->reflFields[$field]->setValue($entity, $data[$field]);
                         $this->originalEntityData[$oid][$field] = $data[$field];
